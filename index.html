@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+    <meta
+        name="description"
+        content="хохохо"
+    >
+    <meta name="theme-color" content="#050505">
+    <title>Для тебя</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="site-shell">
+        <div class="ambient ambient-one" aria-hidden="true"></div>
+        <div class="ambient ambient-two" aria-hidden="true"></div>
+
+        <div class="hearts-layer" aria-hidden="true">
+            <span class="floating-heart heart-one">♥</span>
+            <span class="floating-heart heart-two">♥</span>
+            <span class="floating-heart heart-three">♥</span>
+            <span class="floating-heart heart-four">♥</span>
+            <span class="floating-heart heart-five">♥</span>
+        </div>
+
+        <section
+            class="screen screen-welcome is-active"
+            id="welcomeScreen"
+            aria-labelledby="welcomeTitle"
+        >
+            <div class="content-card">
+                <div class="eyebrow">твой сюрприз</div>
+
+                <div class="main-symbol" aria-hidden="true">♥</div>
+
+                <h1 id="welcomeTitle">привет! <span></span></h1>
+
+                <p class="subtitle">Напиши как тебя зовут:</p>
+
+                <form class="name-form" id="nameForm" novalidate>
+                    <label class="sr-only" for="nameInput">Твое имя</label>
+
+                    <input
+                        id="nameInput"
+                        class="name-input"
+                        type="text"
+                        autocomplete="given-name"
+                        maxlength="40"
+                        placeholder="Твое имя..."
+                        aria-describedby="nameError"
+                    >
+
+                    <p
+                        class="form-error"
+                        id="nameError"
+                        role="alert"
+                        aria-live="polite"
+                    ></p>
+
+                    <button class="primary-button" type="submit">
+                        <span>Далее</span>
+                        <span class="button-arrow" aria-hidden="true"></span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section
+            class="screen screen-success"
+            id="successScreen"
+            aria-labelledby="successTitle"
+            aria-hidden="true"
+        >
+            <div class="content-card">
+                <div class="success-mark" aria-hidden="true">
+                    <span>♥</span>
+                </div>
+
+                
+
+                <h2 id="successTitle">Успешно!</h2>
+
+                <p class="success-name" id="successName"></p>
+
+                <p class="subtitle love-question">Ты меня любишь?</p>
+
+                <div class="choice-buttons">
+                    <button
+                        class="primary-button choice-yes"
+                        id="yesButton"
+                        type="button"
+                    >
+                        <span>Да</span>
+                        <span aria-hidden="true"></span>
+                    </button>
+
+                    <button
+                        class="secondary-button choice-no"
+                        id="noButton"
+                        type="button"
+                        aria-disabled="true"
+                        tabindex="-1"
+                    >
+                        Нет
+                    </button>
+                </div>
+
+                <p class="tiny-note" aria-hidden="true">
+                    Здесь есть только один правильный ответ
+                </p>
+            </div>
+        </section>
+
+        <section
+            class="screen screen-love"
+            id="loveScreen"
+            aria-labelledby="loveTitle"
+            aria-hidden="true"
+        >
+            <div class="content-card love-card">
+                <div class="celebration-symbol" aria-hidden="true">
+                    <span class="mini-heart mini-heart-left"></span>
+                    <span class="big-heart">♥</span>
+                    <span class="mini-heart mini-heart-right"></span>
+                </div>
+
+                <div class="eyebrow">я так и знал</div>
+
+                <h2 id="loveTitle">Я тебя тоже <span></span></h2>
+
+                <p class="compliment-intro">
+                    Тебе комплименты!
+                </p>
+
+                <button
+                    class="primary-button"
+                    id="startComplimentsButton"
+                    type="button"
+                >
+                    <span>Далее</span>
+                    <span class="button-arrow" aria-hidden="true">→</span>
+                </button>
+            </div>
+        </section>
+
+        <section
+            class="screen screen-compliments"
+            id="complimentsScreen"
+            aria-labelledby="complimentTitle"
+            aria-hidden="true"
+        >
+            <div class="content-card compliment-card">
+                <div class="compliment-top">
+                    <div class="eyebrow">для тебя</div>
+
+                    <div
+                        class="progress"
+                        id="progress"
+                        aria-label="Прогресс комплиментов"
+                    >
+                        <span id="progressText">1 / 15</span>
+                    </div>
+                </div>
+
+                <div class="compliment-decoration" aria-hidden="true">
+                    <span>♥</span>
+                </div>
+
+                <div class="compliment-content">
+                    <p class="compliment-number" id="complimentNumber">
+                        01
+                    </p>
+
+                    <h2 id="complimentTitle" class="compliment-text">
+                        Ты - самое прекрасное, что случилось со мной. 
+                    </h2>
+                </div>
+
+                <div class="compliment-actions">
+                    <button
+                        class="primary-button"
+                        id="nextComplimentButton"
+                        type="button"
+                    >
+                        <span id="nextButtonText">Далее</span>
+                        <span class="button-arrow" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="screen screen-final"
+            id="finalScreen"
+            aria-labelledby="finalTitle"
+            aria-hidden="true"
+        >
+            <div class="final-content">
+                <div class="final-crown" aria-hidden="true">
+                    <span>♥</span>
+                </div>
+
+                <div class="eyebrow"></div>
+
+                <h2 id="finalTitle">
+                    Сделал
+                    <span class="final-highlight">@vnllkns</span>
+                    <br>
+                    для счастья
+                    <span class="final-highlight">@dudegotripoveraknife</span>
+                </h2>
+
+                <div class="final-line" aria-hidden="true"></div>
+
+                <div class="final-hearts" aria-hidden="true">
+                    <span>♥</span>
+                    <span>♥</span>
+                    <span>♥</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div
+        class="transition-glow"
+        id="transitionGlow"
+        aria-hidden="true"
+    ></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
